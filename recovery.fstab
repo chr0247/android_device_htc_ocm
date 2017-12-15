@@ -1,8 +1,8 @@
 # mount point		fstype  device					device2			flags
 /system			ext4	/dev/block/bootdevice/by-name/system
-/system_image		emmc	/dev/block/bootdevice/by-name/system				flags=flashimg=1
-/vendor			ext4	/dev/block/bootdevice/by-name/vendor
-#/vendor_image		emmc	/dev/block/bootdevice/by-name/vendor				flags=backup=1;flashimg=1
+/system_image	emmc	/dev/block/bootdevice/by-name/system				flags=flashimg=1
+/vendor			ext4	/dev/block/bootdevice/by-name/vendor				flags=backup=1;mounttodecrypt
+/vendor_image	emmc	/dev/block/bootdevice/by-name/vendor				flags=backup=1;flashimg=1
 /cache			ext4	/dev/block/bootdevice/by-name/cache
 /data			ext4	/dev/block/bootdevice/by-name/userdata				flags=encryptable=/dev/block/bootdevice/by-name/extra
 /boot			emmc	/dev/block/bootdevice/by-name/boot
@@ -15,5 +15,5 @@
 /persist		ext4	/dev/block/bootdevice/by-name/persist
 
 # Removable storage
-/external_sd		vfat	/dev/block/mmcblk0p1			/dev/block/mmcblk0	flags=storage;wipeingui;removable;encryptable=footer
-/usb_otg		vfat	/dev/block/sdg1				/dev/block/sdg		flags=storage;wipeingui;removable
+/external_sd	vfat	/dev/block/mmcblk0p1		/dev/block/mmcblk0		flags=storage;wipeingui;removable;encryptable=footer
+/usb_otg		vfat	/dev/block/sdg1				/dev/block/sdg			flags=storage;wipeingui;removable
